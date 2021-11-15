@@ -9,8 +9,7 @@
 export default {
   methods: {
     fetchData(){
-      console.log('hello');
-      
+      console.log('hello');  
     }
   }
 }
