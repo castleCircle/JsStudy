@@ -8,14 +8,14 @@
         {{ item.time_ago }} 
         by 
         {{item.user}}
-        <router-link :to="`user/${item.user}`">{{item.user}}</router-link>
+        <router-link :to="`item/${item.id}`">{{item.user}}</router-link>
       </small>
     </p> 
   </div>
 </template>
 
 <script>
-import { mapGetters, mapState } from 'vuex'; 
+import { mapGetters} from 'vuex'; 
 
 export default {
   computed: {
