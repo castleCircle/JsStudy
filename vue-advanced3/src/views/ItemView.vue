@@ -1,7 +1,7 @@
 <template>
   <div>
       <p>
-          {{itemInfo}}
+          test: {{itemInfo}}
       </p>
   </div>
 </template>
