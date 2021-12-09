@@ -1,8 +1,11 @@
 <template>
   <div>
       <p>
-          test: {{itemInfo}}
+          test: {{itemInfo.title}}
       </p>
+      <div>
+          test: {{itemInfo.content}}
+      </div>
   </div>
 </template>
 
@@ -15,7 +18,6 @@ export default {
         }
     },
     created(){
-        console.log(this.$route)
         const itemId = this.$route.params.id;
         this.$store.dispatch('FETCH_ITEM',itemId);
     }

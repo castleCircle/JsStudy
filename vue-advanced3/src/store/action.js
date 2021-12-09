@@ -1,5 +1,5 @@
 import { fetchNewsList , fetchJobsList ,fetchAskList 
-    ,fetchUserInfo , fetchItemInfo} from '../api/index.js'
+    ,fetchUserInfo , fetchCommentItem} from '../api/index.js'
 
 export default {
     FETCH_NEWS(context) {
@@ -39,7 +39,7 @@ export default {
         });
     },
     FETCH_ITEM({commit},id){
-        fetchItemInfo(id)
+        fetchCommentItem(id)
         .then(({data})=>{
             commit('SET_ITEM',data)
         })
