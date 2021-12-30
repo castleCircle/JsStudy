@@ -1,46 +1,48 @@
 <template>
   <div>
-    <list-item></list-item>
     <ul class="news-list">
-      <li v-for="job in this.$store.state.jobs" class="post">
+      <li v-for="item in this.$store.state.news" class="post">
         <!-- 포인트 영역 -->
         <div class="points">
-          {{job.points || 0}}
+          {{item.points}}
         </div>
 
         <!-- 기타정보 영역 -->
         <div>
           <p class="news-title">
-            <a :href="job.url">{{job.title}}</a>
+            <a v-bind:href="item.url">
+              {{item.title}}
+            </a>
           </p>
           <small class="link-text">
-            {{job.time_ago}} by 
-            <a :href="job.url">
-              {{job.domain}}
-            </a>
+          {{item.time_ago}} by 
+          <router-link v-bind:to="`/user/${item.user}`" class="link-text">{{item.user}}</router-link>
         </small>
         </div>
       </li>
     </ul>
-  
   </div>
 </template>
 
 <script>
-import ListItem from '../components/ListItem.vue'
-
 export default {
-  components: { ListItem },
-  data(){
-    return {
-      jobs : []
+  created() {
+    console.log(this.$route.path === '/news');
+    const name = this.$route.name;
+    if(name ==='news'){
+        this.$store.dispatch('FETCH_NEWS');
+    }else if(name ==='ask'){
+        this.$store.dispatch('FETCH_ASK');
+    }else if(name ==='jobs'){
+        this.$store.dispatch('FETCH_JOBS');
     }
   },
-  created(){
-    this.$store.dispatch('FETCH_JOBS')
+  computed: {
+      
   }
 }
 </script>
+
 
 <style scoped>
 .news-list{
