@@ -1,6 +1,7 @@
 <template>
   <div>
-      <p>
+    <user-profile :info="userInfo"></user-profile>
+      <!-- <p>
         name : {{userInfo.id}}
       </p>
       <p>
@@ -8,26 +9,28 @@
       </p>
       <p>
         created : {{userInfo.created}}
-      </p>
+      </p> -->
   </div>
 </template>
 
 <script>
 
-import {mapGetters} from 'vuex'
+import UserProfile from '../components/UserProfile.vue'
 
 
 export default {
-    computed: {
-        userInfo(){
-          return this.$store.state.user;
-        },
-    },
-    created(){
-      console.log(this.$route)
-        const userName = this.$route.params.id;
-        this.$store.dispatch('FETCH_USER',userName);
-    },
+  components:{
+    UserProfile
+  },
+  computed: {
+    userInfo(){
+      return this.$store.state.user;
+    }
+  },
+  created(){
+    const userName = this.$route.params.id;
+    this.$store.dispatch('FETCH_USER',userName);
+  },
 }
 </script>
 

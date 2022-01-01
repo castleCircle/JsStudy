@@ -1,6 +1,5 @@
 <template>
   <div class="header">
-      <a href="/jobs">test</a>
       <router-link to="/news">News</router-link> |
       <router-link to="/ask">Ask</router-link> |
       <router-link to="/jobs">Jobs</router-link>
