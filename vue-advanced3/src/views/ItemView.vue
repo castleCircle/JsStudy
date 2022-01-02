@@ -8,6 +8,9 @@
              <template slot="time">
                  {{fetchedItem.time_ago}}
              </template>
+             <div slot="test">
+                 test
+             </div>
          </user-profile>
       </section>
       <section>
