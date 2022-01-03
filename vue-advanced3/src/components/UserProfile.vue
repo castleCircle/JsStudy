@@ -11,12 +11,10 @@
                     <slot name="time">
                         <!-- 상위 컴포넌트에서의 정의할 영역 -->
                     </slot>
+                    <slot name="karma">
+                    </slot>
                 </div>
             </div>
-            <slot name="karma">
-            </slot>
-            <slot name="test">
-            </slot>
           </div>
 </template>
 

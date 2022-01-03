@@ -4,14 +4,13 @@
       <div slot="username">
         {{userInfo.id}}
       </div>
-      <template slot="time">
-        {{userInfo.created}}
-      </template>
-      <div slot="karma">
+      <span slot="time">
+        {{ 'Joined ' + userInfo.created}},
+      </span>
+      <span slot="karma">
         {{userInfo.karma}}
-      </div>
+      </span>
     </user-profile>
-     
   </div>
 </template>
 
