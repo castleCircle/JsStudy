@@ -40,7 +40,7 @@
 
 <script>
 export default {
- 
+
   computed: {
     listItems() {
         const name = this.$route.name;

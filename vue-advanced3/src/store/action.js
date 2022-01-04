@@ -6,6 +6,7 @@ export default {
         fetchNewsList()
         .then(response=>{
             context.commit('SET_NEWS',response.data);
+            return response;
         })
         .catch(error=>{
             console.log(error);
