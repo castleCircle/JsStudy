@@ -15,6 +15,7 @@ export default {
   },
  created() {
 
+   console.log('tt')
     bus.$emit('start:spinner');
     
     setTimeout(() => {

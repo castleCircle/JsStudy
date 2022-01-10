@@ -5,7 +5,7 @@ import AskView from '../views/AskView.vue';
 import JobsView from '../views/JobsView.vue';
 import UserView from '../views/UserView.vue';
 import ItemView from '../views/ItemView.vue';
-import createListView from '../view/CreateListView';
+import CreateListView from '../views/CreateListView.js';
 
 Vue.use(VueRouter);
 
@@ -22,7 +22,7 @@ export const router = new VueRouter({
             // component: url 주소로 갔을 대 표시될 컴포넌트
             name: 'news',
             // component: NewsView,
-            component: createListView('NewsView'),
+            component: CreateListView('NewsView'),
         },
 		{
             //url 주소
@@ -30,7 +30,7 @@ export const router = new VueRouter({
             // component: url 주소로 갔을 대 표시될 컴포넌트
             name: 'ask',
             // component: AskView,
-            component: createListView('AskView'),
+            component: CreateListView('AskView'),
         },
 		{
             //url 주소
@@ -38,7 +38,7 @@ export const router = new VueRouter({
             // component: url 주소로 갔을 대 표시될 컴포넌트
             name: 'jobs',
             // component: JobsView,
-            component: createListView('JobsView'),
+            component: CreateListView('JobsView'),
         },
         {
             path: '/user/:id',
