@@ -4,8 +4,9 @@ export default {
     created(){
         bus.$emit('start:spinner');
         console.log(this.$route.name)
-        this.$store.dispatch('FETCH_LIST',this.$route.name).then(()=> {
-        console.log('fetched')
+        this.$store.dispatch('FETCH_LIST',this.$route.name).then((test)=> {
+            console.log(test)
+            console.log('fetched')
             bus.$emit('end:spinner')
         })
         .catch((error)=>{
