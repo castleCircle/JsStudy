@@ -26,11 +26,8 @@ export const router = new VueRouter({
             component: NewsView,
             beforeEnter: (to,from,next) => {
                 bus.$emit('start:spinner');
-                store.dispatch('FETCH_LIST',to.name).then(()=> {
-                    console.log('fetched')
-                    bus.$emit('end:spinner')
-                    next()
-                })
+                store.dispatch('FETCH_LIST',to.name).then(()=> 
+                    next())
                 .catch((error)=>{
                     console.log(error)
                 })
@@ -44,6 +41,14 @@ export const router = new VueRouter({
             // component: url 주소로 갔을 대 표시될 컴포넌트
             name: 'ask',
             component: AskView,
+            beforeEnter: (to,from,next) => {
+                bus.$emit('start:spinner');
+                store.dispatch('FETCH_LIST',to.name).then(()=>
+                    next()
+                ).catch((error)=>{
+                    console.log(error)
+                })
+            }
             // component: CreateListView('AskView'),
         },
 		{
@@ -52,6 +57,14 @@ export const router = new VueRouter({
             // component: url 주소로 갔을 대 표시될 컴포넌트
             name: 'jobs',
             component: JobsView,
+            beforeEnter : (to,from,next) => {
+                bus.$emit('start:spinner');
+                store.dispatch('FETCH_LIST',to.name).then(()=>
+                    next()
+                ).catch((error)=>{
+                    console.log(error)
+                })
+            }
             // component: CreateListView('JobsView'),
         },
         {
